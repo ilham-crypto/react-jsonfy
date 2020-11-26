@@ -8,7 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-class Post extends Component{
+
+class Photos extends Component{
     constructor(props) {
         super(props);
     
@@ -18,7 +19,7 @@ class Post extends Component{
       }
     
       componentDidMount() {
-        const apiUrl = 'https://jsonfy.com/posts';
+        const apiUrl = 'https://jsonfy.com/photos';
         fetch(apiUrl)
         .then((response) => response.json())
         .then((data) => this.setState({ data: data }));
@@ -29,10 +30,10 @@ class Post extends Component{
 
         return(
             <div>
-                <nav>
+              <nav>
                     <Mui.AppBar>
                         <Mui.Toolbar>
-                        <a href="#!" class="brand-logo right">Data Json Posts</a>
+                        <a href="#!" class="brand-logo right">Data Json Photos</a>
                             <Mui.Typography>
                     <div class="nav-wrapper red accent-4">
                     <ul class="left hide-on-med-and-down">
@@ -52,17 +53,17 @@ class Post extends Component{
                     </nav>
                 <Mui.Container Fixed>
                     <Mui.Paper class="card-panel indigo">
-                <h2>Data Json Posts</h2>
+                <h2>Data Json Photos</h2>
                 </Mui.Paper><br/>
                 <TableContainer component={Paper}>
                     <Table>
                         <TableHead>
                         <TableRow class="card-panel indigo">
                             <TableCell align="left">ID</TableCell>
-                            <TableCell align="left">TITLE</TableCell>
-                            <TableCell align="left">BODY</TableCell>
-                            <TableCell align="left">DATE_ADD</TableCell>
-                            <TableCell align="left">DATE_UPD</TableCell>
+                            <TableCell align="left">ALB_PHO_FK</TableCell>
+                            <TableCell align="left">CAPTION</TableCell>
+                            <TableCell align="left">URL</TableCell>
+                            <TableCell align="left">THUMBNAIL_URL</TableCell>
                         </TableRow>
                         </TableHead>
                         <TableBody>
@@ -71,10 +72,10 @@ class Post extends Component{
                             <TableCell component="th" scope="row">
                                 {todo.id}
                             </TableCell>
-                            <TableCell align="left">{todo.title}</TableCell>
-                            <TableCell align="left">{todo.body}</TableCell>
-                            <TableCell align="left">{todo.date_add}</TableCell>
-                            <TableCell align="left">{todo.date_upd}</TableCell>
+                            <TableCell align="left">{todo.alb_pho_fk}</TableCell>
+                            <TableCell align="left">{todo.caption}</TableCell>
+                            <TableCell align="left">{todo.url}</TableCell>
+                            <TableCell align="left">{todo.thumbnail_url}</TableCell>
                             </TableRow>
                         )}
                         </TableBody>
@@ -86,4 +87,4 @@ class Post extends Component{
     }
 }
     
-export default Post;
+export default Photos;

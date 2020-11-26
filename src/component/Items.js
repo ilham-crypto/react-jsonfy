@@ -8,7 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-class Post extends Component{
+
+class Items extends Component{
     constructor(props) {
         super(props);
     
@@ -18,7 +19,7 @@ class Post extends Component{
       }
     
       componentDidMount() {
-        const apiUrl = 'https://jsonfy.com/posts';
+        const apiUrl = 'https://jsonfy.com/items';
         fetch(apiUrl)
         .then((response) => response.json())
         .then((data) => this.setState({ data: data }));
@@ -29,10 +30,10 @@ class Post extends Component{
 
         return(
             <div>
-                <nav>
+               <nav>
                     <Mui.AppBar>
                         <Mui.Toolbar>
-                        <a href="#!" class="brand-logo right">Data Json Posts</a>
+                        <a href="#!" class="brand-logo right">Data Json Items</a>
                             <Mui.Typography>
                     <div class="nav-wrapper red accent-4">
                     <ul class="left hide-on-med-and-down">
@@ -52,17 +53,24 @@ class Post extends Component{
                     </nav>
                 <Mui.Container Fixed>
                     <Mui.Paper class="card-panel indigo">
-                <h2>Data Json Posts</h2>
+                <h2>Data Json Items</h2>
                 </Mui.Paper><br/>
                 <TableContainer component={Paper}>
                     <Table>
                         <TableHead>
                         <TableRow class="card-panel indigo">
-                            <TableCell align="left">ID</TableCell>
-                            <TableCell align="left">TITLE</TableCell>
-                            <TableCell align="left">BODY</TableCell>
-                            <TableCell align="left">DATE_ADD</TableCell>
-                            <TableCell align="left">DATE_UPD</TableCell>
+                            <TableCell align="left">id</TableCell>
+                            <TableCell align="left">name</TableCell>
+                            <TableCell align="left">description</TableCell>
+                            <TableCell align="left">wholesale_price</TableCell>
+                            <TableCell align="left">price</TableCell>
+                            <TableCell align="left">photo_url</TableCell>
+                            <TableCell align="left">stock</TableCell>
+                            <TableCell align="left">sales</TableCell>
+                            <TableCell align="left">active</TableCell>
+                            <TableCell align="left">date_add</TableCell>
+                            <TableCell align="left">date_upd</TableCell>
+                            <TableCell align="left">bra_ite_fk</TableCell>
                         </TableRow>
                         </TableHead>
                         <TableBody>
@@ -71,10 +79,17 @@ class Post extends Component{
                             <TableCell component="th" scope="row">
                                 {todo.id}
                             </TableCell>
-                            <TableCell align="left">{todo.title}</TableCell>
-                            <TableCell align="left">{todo.body}</TableCell>
+                            <TableCell align="left">{todo.name}</TableCell>
+                            <TableCell align="left">{todo.description}</TableCell>
+                            <TableCell align="left">{todo.wholesale_price}</TableCell>
+                            <TableCell align="left">{todo.price}</TableCell>
+                            <TableCell align="left">{todo.photo_url}</TableCell>
+                            <TableCell align="left">{todo.stock}</TableCell>
+                            <TableCell align="left">{todo.sales}</TableCell>
+                            <TableCell align="left">{todo.active}</TableCell>
                             <TableCell align="left">{todo.date_add}</TableCell>
                             <TableCell align="left">{todo.date_upd}</TableCell>
+                            <TableCell align="left">{todo.bra_ite_fk}</TableCell>
                             </TableRow>
                         )}
                         </TableBody>
@@ -86,4 +101,4 @@ class Post extends Component{
     }
 }
     
-export default Post;
+export default Items;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import * as Mui from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -32,15 +31,26 @@ class Users extends Component{
         return(
             <div>
                 <nav>
-                    <div class="nav-wrapper red accent-4">
-                    <a href="#!" class="brand-logo center">Data Json Users</a>
+                    <Mui.AppBar>
+                        <Mui.Toolbar>
+                        <a href="#!" class="brand-logo right">Data Json Users</a>
+                            <Mui.Typography>
+                    <div class="nav-wrapper">
                     <ul class="left hide-on-med-and-down">
                         <li><a href="/">Users</a></li>
                         <li><a href="/Comments">Comments</a></li>
-                        <li class="active"><a href="/Post">Posts</a></li>
+                        <li><a href="/Post">Posts</a></li>
+                        <li><a href="/Albums">Albums</a></li>
+                        <li><a href="/Photos">Photos</a></li>
+                        <li><a href="/Categories">Categories</a></li>
+                        <li><a href="/Brands">Brands</a></li>
+                        <li><a href="/Items">Items</a></li>
                     </ul>
                     </div>
-                </nav>
+                    </Mui.Typography>
+                    </Mui.Toolbar>
+                    </Mui.AppBar>
+                    </nav>
                 <Mui.Container Fixed>
                     <Mui.Paper class="card-panel indigo">
                 <h2>Data Json Users</h2>
@@ -68,7 +78,6 @@ class Users extends Component{
                             <TableCell component="th" scope="row">
                                 {todo.id}
                             </TableCell>
-                            <TableCell align="left">{todo.id}</TableCell>
                             <TableCell align="left">{todo.name}</TableCell>
                             <TableCell align="left">{todo.username}</TableCell>
                             <TableCell align="left">{todo.email}</TableCell>
